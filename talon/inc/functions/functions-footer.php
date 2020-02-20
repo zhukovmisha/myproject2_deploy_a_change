@@ -21,7 +21,7 @@ add_action('talon_footer', 'talon_footer_sidebar', 7);
 function talon_footer_credits() {
 	?>
 		<div class="site-info col-md-6">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'talon' ) ); ?>" rel="nofollow"><?php printf( esc_html__( 'Powered by %s', 'talon' ), 'WordPress' ); ?></a>
+			<!--<a href="<?php/** echo esc_url( __( 'https://wordpress.org/', 'talon' ) ); ?>" rel="nofollow"><?php printf( esc_html__( 'Powered by %s', 'talon' ), 'WordPress' ); */ ?></a> -->
 			<span class="sep"> | </span>
 			<?php printf( esc_html__( 'Theme: %2$s by %1$s.', 'talon' ), 'aThemes', '<a href="//athemes.com/theme/talon" rel="nofollow">Talon</a>' ); ?>
 		</div><!-- .site-info -->
