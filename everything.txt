@@ -1,0 +1,1 @@
+/var/lib/docker/volumes/wordpress_wordpress_data/_data/wordpress/wp-content/themes
