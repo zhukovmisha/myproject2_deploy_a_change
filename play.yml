@@ -1,4 +1,16 @@
 - hosts: deploy1
+  vars:
+    - name:
   tasks:
-    - shell: echo Hello World from Ansible > /tmp/ansible-file
+    - name: delete
+      file:
+        path: /var/lib/docker/volumes/wordpress_wordpress_data/_data/wordpress/wp-content/themes/talon
+        state: absent
 
+    - name: copy
+      copy:
+        src: "{{name}}/talon"
+        dest: /var/lib/docker/volumes/wordpress_wordpress_data/_data/wordpress/wp-content/themes/
+        owner: misha
+        group: daemon
+        mode: '0775'
