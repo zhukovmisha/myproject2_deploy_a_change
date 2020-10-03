@@ -1,6 +1,6 @@
 # Deploying a change to wordpress
 Now that we have a web server it is time to deploy something to it.
-One of the common deployments to wp is theme developing.
+One of the common deployments to wp is theme development.
 ## Jenkins setup
 I assume you have CentOS 8.2
 
@@ -8,7 +8,7 @@ Install [Docker](https://docs.docker.com/engine/install/centos/)
 
 Install [Docker Compose](https://docs.docker.com/compose/install/)
 
-Create the home folder for Jenkins
+Create a home folder for Jenkins
 ```
 mkdir ~/jenkins-data
 cd jenkins-data
@@ -91,7 +91,29 @@ docker logs jenkins
 ```
 ![alt text](img/jenkins_setup/logs.png)
 
+For Jenkins Pipeline we need to install the Ansible plugin.
+Go to Manage Jenkins > Manage Plugins > Available > search Ansible.
+
+Don't forget to connect to the target server inside the jenkins container via SSH for the first time manually.
+
+![alt text](img/jenkins_setup/first_time.png)
 ## Creating a job
+New Item > Enter an item name > Pipeline
+
+![alt text](img/job/scm.png)
+
+Just copypaste the project's git url
+```
+https://github.com/zhukovmisha/myproject2_deploy_a_change
+```
+![alt text](img/job/creating_a_job_gui.png)
+
+Save > Build Now
+
+And that's it!
+![alt text](img/job/result.png)
+
+The deployment performed with a downtime of 1m 30s
 
 ## Technologies used
 ![alt text](img/tech_for_project2.png)
